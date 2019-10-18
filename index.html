@@ -16,12 +16,45 @@
 
     <body>
         <span id="wrapper">
-        <div>
+            <form class="new-list-form">
             <input type="text" id="sectionText" class="input" placeholder="Title..." />
-            <button id="btn" class="new-list-button">New List</button>
-        </div>
+            <button id="btn" class="new-list-button" role="submit">New List</button>
+            </div>
         </span>
-        <script src="index.js"></script>
+            <script src="index.js"></script>
     </body>
-</html>
+
+    <!-- The Modal -->
+    <div id="shareModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Choose friends to share the list with...</p>
+
+            <div class="chip">
+                <p>sam@google.com</p>
+                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+
+            <div class="chip">
+                <p>alice@google.com</p>
+                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+
+            <div class="chip">
+                <p>david@google.com</p>
+                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+
+            <div class="chip">
+                <p>carol@google.com</p>
+                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+
+            <button id="submitButton" class="button">Submit</button>
+
+        </div>
+
+    </div>
+
 </html>

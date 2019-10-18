@@ -55,16 +55,15 @@ const createList = () => {
   const bckgrndColor = getRandomColor();
   h3.style.backgroundColor = bckgrndColor;
   h3.style.color = getContrast(bckgrndColor);
-  section.appendChild(h3);
 
   // New item input
   const input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("placeholder", "Item...");
-  section.appendChild(input);
 
   // Create a callback, whhich adds new item
-  const addNewItem = () => {
+  const addNewItem = e => {
+    e.preventDefault(); // do not actually submit form
     const itemText = input.value;
     input.value = ""; // clear input
     const newItem = createListItem(itemText); // create new item
@@ -75,7 +74,6 @@ const createList = () => {
   const btn = document.createElement("button");
   btn.innerText = "Add item";
   btn.setAttribute("class", "button");
-  btn.style.marginBottom = "10px";
   btn.onclick = addNewItem;
   section.appendChild(btn);
 
@@ -84,16 +82,51 @@ const createList = () => {
   btn_share.innerText = "Share";
   btn_share.setAttribute("class", "button");
   section.appendChild(btn_share);
+  const modal = document.getElementById("shareModal");
+  const span = document.getElementsByClassName("close")[0];
+  btn_share.addEventListener("click", function(event) {
+    event.preventDefault();
+    modal.style.display = "block";
+    //var currentListToShare = listItemCounter;
+  });
+  span.onclick = function() {
+    modal.style.display = "none";
+  };
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  //submit button pressed
+  const submitBtn = document.getElementById("submitButton");
+  submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    modal.style.display = "none";
+    //console.log("List number" + currentListToShare + "sent to...");
+  });
+
+  // New item form
+  const form = document.createElement("form");
+  form.onsubmit = addNewItem;
+  form.setAttribute("class", "new-item-form");
+  form.appendChild(input);
+  form.appendChild(btn);
+  form.appendChild(btn_share);
+
+  section.appendChild(h3);
+  section.appendChild(form);
 
   // Create new item
   return section;
 };
 
-const newListButton = document.querySelector(".new-list-button"); // 'New list' button
+const newListForm = document.querySelector(".new-list-form"); // 'New list' button
 const container = document.querySelector("#wrapper"); // app wrapper
 
-newListButton.onclick = () => {
+newListForm.onsubmit = e => {
   try {
+    e.preventDefault();
     const section = createList();
     container.appendChild(section);
   } catch (e) {
@@ -115,7 +148,6 @@ const getRandomColor = () => {
   return "#" + color;
 };
 
-// font color based on a randomly picked background
 const getContrast = hexcolor => {
   // If a leading # is provided, remove it
   if (hexcolor.slice(0, 1) === "#") {

@@ -3,6 +3,13 @@
   box-sizing: border-box;
 }
 
+.parent {
+  background-color: #ddd;
+  margin: 10px;
+  padding: 30px;
+  display: flex;
+}
+
 /* Remove margins and padding from the list */
 ul {
   margin: 0;
@@ -89,14 +96,14 @@ ul li.checked::before {
 }
 
 /* Style the input */
-input {
-  margin-bottom: 10px;
+input     /* margin-bottom: 10px; */
+ {
   border: none;
-  border-radius: 0px;
-  width: 65%;
+  border-radius: 5px;
   padding: 10px;
-  float: left;
+  flex: 1;
   font-size: 16px;
+  border: 2px solid gray;
 }
 
 /* Style the "Add" button */
@@ -104,14 +111,14 @@ button {
   border: 2px solid #5a3d2b;
 
   padding: 10px;
-  margin-right: 16px;
-  width: 15%;
+  margin-left: 10px;
   color: #36251a;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
   border-radius: 5px;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -134,9 +141,6 @@ button:hover {
   background-color: transparent;
 }
 
-/*modal from site*/
-
-/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -150,19 +154,16 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-/* Modal Header */
 .modal-header {
   padding: 2px 16px;
   background-color: #800012;
   color: white;
 }
 
-/* Modal Body */
 .modal-body {
   padding: 2px 16px;
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
@@ -184,7 +185,6 @@ button:hover {
   }
 }
 
-/* The Close Button */
 .close-modal {
   color: #aaa;
   float: right;
@@ -207,12 +207,6 @@ button:hover {
   -moz-column-gap: 0.5rem; /* Firefox */
   column-gap: 0.5rem;
 }
-.note {
-  width: calc(100% / 1);
-  padding-right: 36px;
-}
-
-/*try this new*/
 
 div {
   padding: 5px;
@@ -220,27 +214,6 @@ div {
   margin: 0 auto;
 }
 
-div h1 {
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-section {
-  border: 1px;
-  padding: 5px;
-}
-/*
-input[type=text] {
-    margin-top:10px;
-    
-    padding: 16px;
-    width: 30%;
-    
-    font-size: 16px;
-}*/
-
-/*could be the same as ul li - check*/
 div.listItem {
   cursor: pointer;
   position: relative;
@@ -249,41 +222,13 @@ div.listItem {
   font-size: 18px;
   transition: 0.2s;
   height: 46px;
+  display: inline-flex;
 
   /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-/* Set all odd list items to a different color (zebra-stripes) */
-div.listItem:nth-child(odd) {
-  background: #f9f9f9;
-}
-
-/* Darker background-color on hover */
-div.listItem:hover {
-  background: #ddd;
-}
-
-/* When clicked on, add a background color and strike out text */
-div.listItem:checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
-
-input[type="checkbox"] {
-  height: 20px;
-  width: 15px;
-}
-h3 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  text-align: center;
-  height: 46px;
-  font-size: 22px;
 }
 
 .checkbox {
@@ -300,8 +245,6 @@ h3 {
   height: 100%;
   display: flex;
   align-items: center;
-  /* border: 2px solid crimson;
-  border-radius: 4px; */
   transition: all 0.5s;
   padding-left: 10px;
 }
@@ -310,4 +253,37 @@ h3 {
   background: #888;
   color: #fff;
   text-decoration: line-through;
+}
+
+.new-item-form {
+  display: flex;
+  align-items: center;
+}
+
+.new-list-form {
+  display: flex;
+}
+
+/*chips for emails*/
+.chip {
+  display: flex;
+  padding: 0 25px;
+  width: 40%;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.closebtn {
+  padding-left: 10px;
+  color: #888;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: #000;
 }
