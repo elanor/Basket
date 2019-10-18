@@ -1,88 +1,27 @@
+<html>
 <!DOCTYPE html>
 <html>
-
     <head>
-        <meta charset="UTF-8">
         <title>Basket</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
     </head>
 
-    <nav>           
-        <span>Home</span>
-        <span>Archive</span>
+    <header class="header">
+        <button class="button-bars"><i class="fa fa-bars"></i></button>
+        <h2>Shopping basket</h2>
+        
+    </header>
 
-    </nav>
-        
-        
-        <div id="myDIV" class="header">
-            
-            
-            <h2>Shopping basket</h2>
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn" class="button">New item</button>
-            
-            
+    <body>
+        <span id="wrapper">
+        <div>
+            <input type="text" id="sectionText" class="input" placeholder="Title..." />
+            <button id="btn" class="new-list-button">New List</button>
         </div>
-        
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            
-            <!-- Modal content -->
-            <div class="modal-content">
-            
-            <div class="modal-header">
-                <span class="close-modal">&times;</span>
-                <h2>New List</h2>
-            </div>
-            
-            <div class="modal-body">
-                <input type="text" id="myInputTitle" placeholder="Title...">
-                <input type="text" id="myInput" placeholder="Add item...">
-                <span onclick="newElement()" class="button">Add</span>
-            </div>
-            
-            </div>
-        
-        </div>
-        
-        <div class="container">
-            
-            <div class="note">
-            
-            
-            <ul id="myUL">
-                <li>Hit the gym</li>
-                <li class="checked">Pay bills</li>
-                <li>Meet George</li>
-                <li>Buy eggs</li>
-                <li>Read a book</li>
-                <li>Organize office</li>
-            </ul>
-            
-            
-            <div class="w3-row-padding">
-                <div class="w3-container w3-third">
-                <img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/green-1072828__340.jpg" style="width:100%" onclick="onClick(this)">
-                </div>
-                <div class="w3-container w3-third">
-                <img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/green-1072828__340.jpg" style="width:100%" onclick="onClick(this)">
-                </div>
-                <div class="w3-container w3-third">
-                <img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/green-1072828__340.jpg" style="width:100%" onclick="onClick(this)">
-                </div>
-            </div>
-        
-            <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-                <img class="w3-modal-content" id="image1" style="width:30%">
-            </div>
-            
-            </div>
-        
-        
-        </div>
+        </span>
+        <script src="index.js"></script>
+    </body>
 </html>
-      
-      
-      
-      
+</html>
