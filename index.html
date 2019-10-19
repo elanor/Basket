@@ -8,53 +8,88 @@
         <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
     </head>
 
-    <header class="header">
-        <button class="button-bars"><i class="fa fa-bars"></i></button>
-        <h2>Shopping basket</h2>
-        
-    </header>
-
     <body>
+        <header class="header">
+            <button id="menuBtn" class="button-bars">&#9776;</button>
+            <h2>Shopping basket</h2>
+        </header>
+
         <span id="wrapper">
             <form class="new-list-form">
-            <input type="text" id="sectionText" class="input" placeholder="Title..." />
-            <button id="btn" class="new-list-button" role="submit">New List</button>
-            </div>
+                <input
+                type="text"
+                id="sectionText"
+                class="input"
+                placeholder="Title..."
+                />
+                <button id="btn" class="new-list-button" role="submit">New List</button>
+            </form>
         </span>
-            <script src="index.js"></script>
-    </body>
-
-    <!-- The Modal -->
-    <div id="shareModal" class="modal">
-
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Choose friends to share the list with...</p>
-
-            <div class="chip">
-                <p>sam@google.com</p>
-                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            </div>
-
-            <div class="chip">
-                <p>alice@google.com</p>
-                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            </div>
-
-            <div class="chip">
-                <p>david@google.com</p>
-                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            </div>
-
-            <div class="chip">
-                <p>carol@google.com</p>
-                <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            </div>
-
-            <button id="submitButton" class="button">Submit</button>
-
-        </div>
-
-    </div>
-
-</html>
+            
+                <!-- The Modal -->
+                <div id="shareModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Choose friends to share the list with</h2>
+                    </div>
+            
+                    <div class="chip">
+                    <span>sam@google.com</span>
+                    <span
+                        class="closebtn"
+                        onclick="this.parentElement.style.display='none'"
+                        >&times;</span
+                    >
+                    </div>
+            
+                    <div class="chip">
+                    <span>alice@google.com</span>
+                    <span
+                        class="closebtn"
+                        onclick="this.parentElement.style.display='none'"
+                        >&times;</span
+                    >
+                    </div>
+            
+                    <div class="chip">
+                    <span>david@google.com</span>
+                    <span
+                        class="closebtn"
+                        onclick="this.parentElement.style.display='none'"
+                        >&times;</span
+                    >
+                    </div>
+            
+                    <div class="chip">
+                    <span>carol@google.com</span>
+                    <span
+                        class="closebtn"
+                        onclick="this.parentElement.style.display='none'"
+                        >&times;</span
+                    >
+                    </div>
+            
+                    <button id="submitButton" class="button">Submit</button>
+                </div>
+                </div>
+                <!-- Sidenav-->
+                <div id="menuSidenav" class="sidenav">
+                <a
+                    href="javascript:void(0)"
+                    class="closebtn"
+                    id="closeNavBtn"
+                    onclick="closeNav()"
+                    >&times;</a
+                >
+                <span style="color: #fdebb4">Sam</span>
+                <br />
+                <span style="color: #fdebb4">sam@google.com</span>
+                <hr />
+                <button id="signOutButton" class="signOut">Sign out</button>
+                </div>
+                <script src="index.js"></script>
+            </body>
+            </html>
+          

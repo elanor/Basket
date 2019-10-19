@@ -3,67 +3,6 @@
   box-sizing: border-box;
 }
 
-.parent {
-  background-color: #ddd;
-  margin: 10px;
-  padding: 30px;
-  display: flex;
-}
-
-/* Remove margins and padding from the list */
-ul {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-/* Style the list items */
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
-
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
-
-/* Darker background-color on hover */
-ul li:hover {
-  background: #ddd;
-}
-
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
-
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-  content: "";
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
-
 /* Style the close button */
 .close {
   position: absolute;
@@ -142,22 +81,22 @@ button:hover {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #800012;
-  color: white;
+  background-color: #5a3d2b;
+  color: #fdebb4; /*moccasin*/
 }
 
 .modal-body {
@@ -166,8 +105,8 @@ button:hover {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  margin: 15% auto; /* 5% from the top and centered */
+  padding: 10px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
   height: 50%;
@@ -186,7 +125,7 @@ button:hover {
 }
 
 .close-modal {
-  color: #aaa;
+  color: #5a3d2b;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -208,16 +147,12 @@ button:hover {
   column-gap: 0.5rem;
 }
 
-div {
-  padding: 5px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-div.listItem {
+.listItem {
   cursor: pointer;
   position: relative;
+  width: 100%;
   padding: 12px 8px 12px 40px;
+  margin: 0 auto;
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
@@ -268,7 +203,8 @@ div.listItem {
 .chip {
   display: flex;
   padding: 0 25px;
-  width: 40%;
+  margin-top: 10px;
+  display: inline-flex;
   font-size: 18px;
   line-height: 50px;
   border-radius: 25px;
@@ -286,4 +222,68 @@ div.listItem {
 
 .closebtn:hover {
   color: #000;
+}
+/*========================================================================*/
+/*sidebar nav*/
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 250px;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #5a3d2b;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  transform: translateX(-250px);
+}
+
+.sidenav.show {
+  transform: translateX(0);
+}
+
+section {
+  position: relative;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }

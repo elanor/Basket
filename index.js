@@ -49,12 +49,29 @@ const createList = () => {
 
   // List title
   const h3 = document.createElement("h3");
-  h3.innerText = listName;
+  if (listName === "") {
+    h3.innerText = "New List";
+  } else {
+    h3.innerText = listName;
+  }
+
   h3.setAttribute("class", "header");
   h3.style.marginBottom = "16px";
   const bckgrndColor = getRandomColor();
   h3.style.backgroundColor = bckgrndColor;
   h3.style.color = getContrast(bckgrndColor);
+
+  //close button for each form
+  const spanList = document.createElement("SPAN");
+  const txtList = document.createTextNode("\u00D7");
+  spanList.className = "close";
+  spanList.appendChild(txtList);
+  spanList.style.display = "flex";
+  section.appendChild(spanList);
+
+  spanList.onclick = function() {
+    section.style.display = "none";
+  };
 
   // New item input
   const input = document.createElement("input");
@@ -102,8 +119,11 @@ const createList = () => {
   const submitBtn = document.getElementById("submitButton");
   submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
+    const emails = [...document.querySelectorAll(".chip")]
+      .filter(item => item.style.display !== "none")
+      .map(elem => elem.querySelector("span").textContent);
     modal.style.display = "none";
-    //console.log("List number" + currentListToShare + "sent to...");
+    console.log("List was sent to " + emails);
   });
 
   // New item form
@@ -115,6 +135,7 @@ const createList = () => {
   form.appendChild(btn_share);
 
   section.appendChild(h3);
+  section.appendChild(spanList);
   section.appendChild(form);
 
   // Create new item
@@ -165,3 +186,19 @@ const getContrast = hexcolor => {
   // Check contrast
   return yiq >= 128 ? "#36251a" : "#fdebb4"; //dark late gray, mocassin
 };
+
+//sidenav
+const menuBtn = document.querySelector("#menuBtn");
+const sideNav = document.querySelector("#menuSidenav");
+const hideNavBtn = document.querySelector("#closeNavBtn");
+
+const openNav = () => {
+  sideNav.classList.add("show");
+};
+
+const closeNav = () => {
+  sideNav.classList.remove("show");
+};
+
+hideNavBtn.onclick = closeNav;
+menuBtn.onclick = openNav;
