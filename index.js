@@ -84,6 +84,7 @@ const createList = () => {
   const input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("placeholder", "Item...");
+  //input.setAttribute("label", "input")
 
   // Create a callback, whhich adds new item
   const addNewItem = e => {
@@ -98,6 +99,7 @@ const createList = () => {
   const btn = document.createElement("button");
   btn.innerText = "Add item";
   btn.setAttribute("class", "button");
+  btn.setAttribute("role", "button")
   //btn.style.marginBottom = "10px";
   btn.onclick = addNewItem;
   section.appendChild(btn);
@@ -106,6 +108,7 @@ const createList = () => {
   const btn_share = document.createElement("button");
   btn_share.innerText = "Share";
   btn_share.setAttribute("class", "button");
+  btn_share.setAttribute("role", "button");
   section.appendChild(btn_share);
   const modal = document.getElementById("shareModal");
   const span = document.getElementsByClassName("close")[0];
@@ -208,17 +211,3 @@ const signOutBtn = document.getElementById("signOutButton");
 signOutBtn.addEventListener("click", function (ev) {
   console.log("User signed out");
 });
-/* 
-window.addEventListener("load", () =>{
-  registerSW();
-});
-
-async function registerSW(){
-  if ('serviceWorker' in navigator){
-    try {
-      await navigator.serviceWorker.register('./sw.js')
-    } catch(e){
-      console.log("SW registration failed");
-    }
-  }
-} */

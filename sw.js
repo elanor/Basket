@@ -1,19 +1,7 @@
-/* const cacheName = "basketapp"; */
-/* const staticAssets = [
-    './',
-    './index.html',
-    './style.css',
-    './index.js',
-    './manifest.webmanifest'
-]; */
 self.addEventListener('install', function(event) {
     console.log('SW installed');
-    //event.waitUntil();
     caches.open('static')
     .then(function(cache){
-       /*  caches.add('/index.js');
-        caches.add('/');
-        caches.add('/index.html'); */
         cache.addAll([
                 './',
                 './index.html',
@@ -26,7 +14,6 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function() {
     console.log('SW activated');
-
 });
 
 self.addEventListener('fetch', function(event){
