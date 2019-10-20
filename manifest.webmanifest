@@ -3,7 +3,9 @@
     "short_name": "Basket",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#fff",
+    "orientation": "relative",
+    "background_color": "#ccc",
+    "theme_colof": "#5a3d2b",
     "description": "A simple shopping basket web application",
     "icons": [{
         "src": "images/favicon.png",

@@ -1,4 +1,10 @@
-/* navigator.serviceWorker.register('sw.js'); */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+  .then(function(){
+    console.log('SW registered');
+  });
+}
+
 
 let listItemCounter = 0;
 const createListItem = itemText => {
@@ -202,10 +208,10 @@ const signOutBtn = document.getElementById("signOutButton");
 signOutBtn.addEventListener("click", function (ev) {
   console.log("User signed out");
 });
-
+/* 
 window.addEventListener("load", () =>{
   registerSW();
-})
+});
 
 async function registerSW(){
   if ('serviceWorker' in navigator){
@@ -215,4 +221,4 @@ async function registerSW(){
       console.log("SW registration failed");
     }
   }
-}
+} */
