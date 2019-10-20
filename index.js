@@ -84,7 +84,6 @@ const createList = () => {
   const input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("placeholder", "Item...");
-  //input.setAttribute("label", "input")
 
   // Create a callback, whhich adds new item
   const addNewItem = e => {
