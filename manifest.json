@@ -3,7 +3,7 @@
     "short_name": "Basket",
     "start_url": ".",
     "display": "standalone",
-    "orientation": "relative",
+    "orientation": "portrait",
     "background_color": "#ccc",
     "theme_colof": "#5a3d2b",
     "description": "A simple shopping basket web application",
@@ -12,5 +12,4 @@
         "sizes": "192x192",
         "type": "image/png"
     }]
-
 }
