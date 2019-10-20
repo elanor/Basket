@@ -1,0 +1,14 @@
+{
+    "name": "Shopping Basket",
+    "short_name": "Basket",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A simple shopping basket web application",
+    "icons": [{
+        "src": "images/favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }]
+
+}
