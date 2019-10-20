@@ -56,7 +56,6 @@ const createList = () => {
   }
 
   h3.setAttribute("class", "header");
-  h3.style.marginBottom = "16px";
   const bckgrndColor = getRandomColor();
   h3.style.backgroundColor = bckgrndColor;
   h3.style.color = getContrast(bckgrndColor);
@@ -91,10 +90,11 @@ const createList = () => {
   const btn = document.createElement("button");
   btn.innerText = "Add item";
   btn.setAttribute("class", "button");
+  //btn.style.marginBottom = "10px";
   btn.onclick = addNewItem;
   section.appendChild(btn);
 
-  // Share list button
+  // Share button
   const btn_share = document.createElement("button");
   btn_share.innerText = "Share";
   btn_share.setAttribute("class", "button");
@@ -175,15 +175,12 @@ const getContrast = hexcolor => {
     hexcolor = hexcolor.slice(1);
   }
 
-  // Convert to RGB value
   var r = parseInt(hexcolor.substr(0, 2), 16);
   var g = parseInt(hexcolor.substr(2, 2), 16);
   var b = parseInt(hexcolor.substr(4, 2), 16);
 
   // Get YIQ ratio
   var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-
-  // Check contrast
   return yiq >= 128 ? "#36251a" : "#fdebb4"; //dark late gray, mocassin
 };
 
@@ -191,14 +188,15 @@ const getContrast = hexcolor => {
 const menuBtn = document.querySelector("#menuBtn");
 const sideNav = document.querySelector("#menuSidenav");
 const hideNavBtn = document.querySelector("#closeNavBtn");
-
 const openNav = () => {
   sideNav.classList.add("show");
 };
-
 const closeNav = () => {
   sideNav.classList.remove("show");
 };
-
 hideNavBtn.onclick = closeNav;
 menuBtn.onclick = openNav;
+const signOutBtn = document.getElementById("signOutButton");
+signOutBtn.addEventListener("click", function(ev) {
+  console.log("User signed out");
+});
