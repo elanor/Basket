@@ -44,6 +44,7 @@ h3 {
 /* Style the input */
 input {
   border: none;
+  min-width: 0;
   border-radius: 5px;
   padding: 10px;
   flex: 1;
