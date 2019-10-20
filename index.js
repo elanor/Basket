@@ -29,7 +29,7 @@ const createListItem = itemText => {
   span.appendChild(txt);
   listItem.appendChild(span);
 
-  span.onclick = function() {
+  span.onclick = function () {
     var div = this.parentElement;
     div.style.display = "none";
   };
@@ -68,7 +68,7 @@ const createList = () => {
   spanList.style.display = "flex";
   section.appendChild(spanList);
 
-  spanList.onclick = function() {
+  spanList.onclick = function () {
     section.style.display = "none";
   };
 
@@ -101,15 +101,15 @@ const createList = () => {
   section.appendChild(btn_share);
   const modal = document.getElementById("shareModal");
   const span = document.getElementsByClassName("close")[0];
-  btn_share.addEventListener("click", function(event) {
+  btn_share.addEventListener("click", function (event) {
     event.preventDefault();
     modal.style.display = "block";
     //var currentListToShare = listItemCounter;
   });
-  span.onclick = function() {
+  span.onclick = function () {
     modal.style.display = "none";
   };
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target === modal) {
       modal.style.display = "none";
     }
@@ -117,7 +117,7 @@ const createList = () => {
 
   //submit button pressed
   const submitBtn = document.getElementById("submitButton");
-  submitBtn.addEventListener("click", function(event) {
+  submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     const emails = [...document.querySelectorAll(".chip")]
       .filter(item => item.style.display !== "none")
@@ -197,6 +197,6 @@ const closeNav = () => {
 hideNavBtn.onclick = closeNav;
 menuBtn.onclick = openNav;
 const signOutBtn = document.getElementById("signOutButton");
-signOutBtn.addEventListener("click", function(ev) {
+signOutBtn.addEventListener("click", function (ev) {
   console.log("User signed out");
 });

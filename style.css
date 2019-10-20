@@ -18,10 +18,12 @@
 
 /* Style the header */
 .header {
-  background-color: #5a3d2b; /*dark olive green */
+  background-color: #5a3d2b;
+  /*dark olive green */
   padding: 10px 10px;
   margin-bottom: 10px;
-  color: #fdebb4; /* moccasin */
+  color: #fdebb4;
+  /* moccasin */
   text-align: center;
   font-size: 24px;
   display: flexbox;
@@ -65,14 +67,16 @@ button {
 
 button:hover {
   background-color: #5a3d2b;
-  color: #fdebb4; /* moccasin */
+  color: #fdebb4;
+  /* moccasin */
 }
 
 /* Style the menu button */
 .button-bars {
   background-color: transparent;
   border: none;
-  color: #fdebb4; /* moccasin */
+  color: #fdebb4;
+  /* moccasin */
   font-size: 16px;
   cursor: pointer;
   display: flex;
@@ -103,7 +107,8 @@ button:hover {
 .modal-header {
   padding: 2px 16px;
   background-color: #5a3d2b;
-  color: #fdebb4; /*moccasin*/
+  color: #fdebb4;
+  /*moccasin*/
 }
 
 .modal-body {
@@ -125,6 +130,7 @@ button:hover {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -146,11 +152,15 @@ button:hover {
 }
 
 .container {
-  -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  -moz-column-count: 3; /* Firefox */
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 3;
+  /* Firefox */
   column-count: 3;
-  -webkit-column-gap: 0.5rem; /* Chrome, Safari, Opera */
-  -moz-column-gap: 0.5rem; /* Firefox */
+  -webkit-column-gap: 0.5rem;
+  /* Chrome, Safari, Opera */
+  -moz-column-gap: 0.5rem;
+  /* Firefox */
   column-gap: 0.5rem;
 }
 
@@ -274,6 +284,7 @@ section {
   .sidenav {
     padding-top: 15px;
   }
+
   .sidenav a {
     font-size: 18px;
   }
