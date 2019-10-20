@@ -5,7 +5,7 @@
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#ccc",
-    "theme_colof": "#5a3d2b",
+    "theme_color": "#5a3d2b",
     "description": "A simple shopping basket web application",
     "icons": [{
         "src": "images/favicon.png",
